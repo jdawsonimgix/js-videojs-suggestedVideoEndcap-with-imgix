@@ -1,10 +1,12 @@
+<link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
+
 <head>
   <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./videojs.suggestedVideoEndcap.css" />
 </head>
 
-<body>
-  <h1>imgix test</h1>
-  <video
+<video  
     id="my-video"
     class="video-js"
     controls
@@ -13,20 +15,49 @@
     height="264"
     poster="https://jdawson.imgix.net/vapor-cat-1.jpeg"
     data-setup="{}"
-  >
-    <source
-      src="https://tom.imgix.video/gotopening.mp4?fm=hls"
-      type="application/x-mpegURL"
-    />
+>
+<source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+  type="video/mp4" >
+</video>
 
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
 
-  <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+<script src="videojs.suggestedVideoEndcap.js" type="text/javascript"></script>
+<script>
+  'use strict';
+  
+  var video = videojs('my-video');
+  video.suggestedVideoEndcap({
+    header: 'You may also like…',
+    suggestions: [
+      {
+        title: 'Suggested Video One',
+        url: 'https://www.google.com/',
+        image: 'https://jdawson.imgix.net/vapor-cat-1.jpeg', // could be an animated GIF
+        alt: 'Description of photo', // optional photo description, defaults to the title
+        target: '_blank' // can be any anchor target type
+      },
+      {
+        title: 'Suggested Article One',
+        url: 'https://www.google.com/',
+        image: 'https://jdawson.imgix.net/vapor-cat-1.jpeg',
+        target: '_self' // defaults to self if no target value is present
+      }
+    ]
+  });
+</script>
+
+<script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
 </body>
+
+
+
+ <!-- <source src="https://tom.imgix.video/gotopening.mp4?fm=hls" 
+  type="application/x-mpegURL" 
+  > -->
+
+
+  <!--
+    Start project npm run
+    End project: ctrl+z
+    killall -9 node
+  -->
