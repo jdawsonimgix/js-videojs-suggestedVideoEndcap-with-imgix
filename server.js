@@ -24,6 +24,18 @@ fs.readFile("./index.js", function (err, data) {
   }
   js = data;
 });
+fs.readFile("./videojs.suggestedVideoEndcap.css", function (err, data) {
+  if (err) {
+    throw err;
+  }
+  css = data;
+});
+fs.readFile("./videojs.suggestedVideoEndcap.js", function (err, data) {
+  if (err) {
+    throw err;
+  }
+  js = data;
+});
 
 //create the server - look to see if the request url contains either CSS or Javascript, and return the appropriate information:
 http
