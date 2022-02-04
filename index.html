@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="videojs.suggestedVideoEndcap.css" />
 </head>
 
-
 <script>
 (function (videojs) {
   "use strict";
@@ -89,12 +88,9 @@
     });
   });
 })(window.videojs);
-
-
 </script>
 
-
-
+<h4>imgix hls videos with videojs-suggestedVideoEndcap plug-in</h4>
 
 <video  
     id="my-video"
@@ -103,7 +99,6 @@
     preload="auto"
     width="640"
     height="264"
-    poster="https://jdawson.imgix.net/vapor-cat-1.jpeg"
     data-setup="{}"
 >
 <source src="https://tom.imgix.video/gotopening.mp4?fm=hls" 
@@ -120,16 +115,16 @@
     header: 'You may also like',
     suggestions: [
       {
-        title: 'Suggested Video One',
-        url: 'https://www.google.com/',
+        title: 'Suggested article One',
+        url: 'https://www.google.com/search?q=cats',
         image: 'https://jdawson.imgix.net/vapor-cat-1.jpeg', // could be an animated GIF
         alt: 'Description of photo', // optional photo description, defaults to the title
         target: '_blank' // can be any anchor target type
       },
       {
         title: 'Suggested Article One',
-        url: 'https://www.google.com/',
-        image: 'https://jdawson.imgix.net/vapor-cat-1.jpeg',
+        url: 'https://www.google.com/search?q=dogs',
+        image: 'https://jdawson.imgix.net/istockphoto-1280623255-1024x1024.jpeg',
         target: '_self' // defaults to self if no target value is present
       }
     ]
@@ -138,13 +133,6 @@
 
 <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
 </body>
-
-
-
- <!-- <source src="https://tom.imgix.video/gotopening.mp4?fm=hls" 
-  type="application/x-mpegURL" 
-  > -->
-
 
   <!--
     Start project npm run
