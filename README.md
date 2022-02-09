@@ -24,3 +24,33 @@ This JavaScript demo shows how you can get HLS video using imgix while also cont
 type="application/x-mpegURL">
 </video>
 ```
+
+3. You can then replace the `url` and `imgix` parameters what the ads you want to add at the end of your videos.
+
+Note: It is recommended you limit the number of ads to 3.
+
+```
+<script src="videojs.suggestedVideoEndcap.js" type="text/javascript"></script>
+<script>
+  'use strict';
+
+  var video = videojs('my-video');
+  video.suggestedVideoEndcap({
+    header: 'You may also like',
+    suggestions: [
+      {
+        title: 'Suggested article One',
+        url: 'https://www.google.com/search?q=cats',
+        image: 'https://jdawson.imgix.net/vapor-cat-1.jpeg', // could be an animated GIF
+        alt: 'Description of photo', // optional photo description, defaults to the title
+        target: '_blank' // can be any anchor target type
+      },
+      {
+        title: 'Suggested Article One',
+        url: 'https://www.google.com/search?q=dogs',
+        image: 'https://jdawson.imgix.net/istockphoto-1280623255-1024x1024.jpeg',
+        target: '_self' // defaults to self if no target value is present
+      }
+    ]
+  });
+```
